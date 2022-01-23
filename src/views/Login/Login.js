@@ -1,10 +1,12 @@
-import { ErrorMessage } from "@hookform/error-message";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
+
 import { ErrorSpan } from "../../styles/ErrorMessage";
 import { Box, Flex } from "../../styles/Flex";
-
 import { Form, InputSubmit, InputTextLogin } from "../../styles/Form";
+
+import dragon from "../../assets/dragon.png";
 
 function Login() {
   const [error, setError] = useState();
@@ -32,7 +34,10 @@ function Login() {
     <Flex justifyContent="center" height="100%">
       <Box width={[1 / 1.5, 1 / 5]}>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Log In</h1>
+          <Box justifyContent="center" width="100%">
+            <img src={dragon} alt="Dragon App" />
+          </Box>
+          <h1>Dragon App Log In</h1>
           <InputTextLogin
             type="email"
             placeholder="E-mail"
