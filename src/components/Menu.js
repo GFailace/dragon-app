@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 import { Box } from "../styles/Flex";
 import { NavButton } from "../styles/Nav";
