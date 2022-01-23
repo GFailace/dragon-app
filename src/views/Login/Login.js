@@ -1,10 +1,14 @@
-import React from "react";
+import { ErrorMessage } from "@hookform/error-message";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { ErrorSpan } from "../../styles/ErrorMessage";
 import { Box, Flex } from "../../styles/Flex";
 
 import { Form, InputSubmit, InputTextLogin } from "../../styles/Form";
 
 function Login() {
+  const [error, setError] = useState();
+
   const {
     register,
     handleSubmit,
@@ -18,6 +22,8 @@ function Login() {
         JSON.stringify({ id: "1", username: "Teste" })
       );
       window.location.replace("/");
+    } else {
+      setError("Conta inválida! Tente novamente.");
     }
   };
   console.log(errors);
@@ -30,13 +36,28 @@ function Login() {
           <InputTextLogin
             type="email"
             placeholder="E-mail"
-            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            {...register("email", {
+              required: "Email é obrigatório",
+              pattern: /^\S+@\S+$/i,
+            })}
           />
+
+          <ErrorSpan>
+            <ErrorMessage errors={errors} name="email" />
+          </ErrorSpan>
+
           <InputTextLogin
             type="password"
             placeholder="Senha"
-            {...register("senha", { required: true })}
+            {...register("senha", { required: "Senha é obrigatório" })}
           />
+
+          <ErrorSpan>
+            <ErrorMessage errors={errors} name="senha" />
+          </ErrorSpan>
+
+          {error ? <ErrorSpan>{error}</ErrorSpan> : ""}
+
           <InputSubmit type="submit">Log In</InputSubmit>
         </Form>
       </Box>
