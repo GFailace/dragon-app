@@ -50,7 +50,7 @@ function DragonCard({ id, name }) {
           }).then((result) => {
             if (result.isConfirmed) {
               setTimeout(() => {
-                window.location.reload();
+                window.location.reload(true);
               }, 1000);
             }
           });
@@ -63,7 +63,7 @@ function DragonCard({ id, name }) {
           }).then((result) => {
             if (result.isConfirmed) {
               setTimeout(() => {
-                window.location.reload();
+                window.location.reload(true);
               }, 1000);
             }
           });
