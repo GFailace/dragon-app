@@ -26,7 +26,7 @@ function DragonList() {
   return (
     <Flex flexDirection="column" my={3}>
       <Box justifyContent="center">
-        <h3>Dragons List</h3>
+        <h3>Lista de Dragões</h3>
       </Box>
       <Box flexWrap="wrap" mx="auto" width="100%">
         {dragonsData

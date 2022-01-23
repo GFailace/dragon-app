@@ -42,7 +42,7 @@ function Details({ match }) {
   return (
     <Flex>
       <Box flexWrap="wrap" justifyContent="center" mx="auto" width="80%">
-        <h3>Dragon Details</h3>
+        <h3>Detalhes do Dragão</h3>
         {dragonData && !isLoading ? (
           <DragonDetailsCard
             createdAt={format(
