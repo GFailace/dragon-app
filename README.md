@@ -1,5 +1,9 @@
 # Dragon App
 
+### Dependências do projeto
+
+Para utilizar o app localmente deve-se rodar o comando `npm install` para instalar as dependências.
+
 ### Iniciar App
 
 `npm start`
