@@ -1,8 +1,8 @@
 # Dragon App
 
-## Iniciar App
+### Iniciar App
 
-### `npm start`
+`npm start`
 
 O aplicativo iniciará em [http://localhost:3000](http://localhost:3000)
 
