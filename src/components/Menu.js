@@ -14,10 +14,6 @@ function Menu() {
 
   return isAuth ? (
     <Box justifyContent="flex-end" width="50%">
-      <NavLink to="/create">
-        <NavButton>Criar Dragão</NavButton>
-      </NavLink>
-
       <Box onClick={logout}>
         <NavButton>Sair</NavButton>
       </Box>

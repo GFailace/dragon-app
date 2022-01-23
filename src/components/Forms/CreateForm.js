@@ -38,6 +38,15 @@ function CreateForm({ match }) {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
+      <Box
+        onClick={() => {
+          history.push("/");
+        }}
+        width="10%"
+      >
+        <span>Voltar</span>
+      </Box>
+
       <h1>Criar Dragão</h1>
       <InputText
         type="text"

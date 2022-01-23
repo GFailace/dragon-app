@@ -38,6 +38,11 @@ export const ButtonStyled = styled.button`
       outline: 0;
     }
   }
+
+  svg {
+    margin-right: 10px;
+    width: 24px;
+  }
 `;
 
 export const ButtonSecondaryStyled = styled.button`
