@@ -40,7 +40,7 @@ export const ButtonStyled = styled.button`
   }
 
   svg {
-    margin-right: 10px;
+    margin-right: 20px;
     width: 24px;
   }
 `;

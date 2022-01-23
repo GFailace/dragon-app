@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
+
+import ButtonSecondary from "../../components/ButtonSecondary";
 
 import { ErrorSpan } from "../../styles/ErrorMessage";
 import { Box, Flex } from "../../styles/Flex";
@@ -9,9 +11,8 @@ import { Form, InputSubmit, InputTextLogin } from "../../styles/Form";
 
 import dragon from "../../assets/dragon.png";
 
-function Login() {
+function SignUp() {
   const [error, setError] = useState();
-  const newUser = JSON.parse(localStorage.getItem("userSignup"));
 
   const {
     register,
@@ -19,15 +20,14 @@ function Login() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    if (data.email === newUser.email && data.senha === newUser.senha) {
-      sessionStorage.setItem("localAuth", true);
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({ id: "1", username: "Teste" })
+    if (data) {
+      localStorage.setItem(
+        "userSignup",
+        JSON.stringify({ email: data.email, senha: data.senha })
       );
-      window.location.replace("/");
+      window.location.replace("/login");
     } else {
-      setError("Conta inválida! Tente novamente.");
+      setError("Conta não criada! Tente novamente.");
     }
   };
   console.log(errors);
@@ -39,7 +39,7 @@ function Login() {
           <Box justifyContent="center" width="100%">
             <img src={dragon} alt="Dragon App" />
           </Box>
-          <h1>Dragon App Log In</h1>
+          <h1>Dragon App Sign Up</h1>
           <InputTextLogin
             type="email"
             placeholder="E-mail"
@@ -65,15 +65,26 @@ function Login() {
 
           {error ? <ErrorSpan>{error}</ErrorSpan> : ""}
 
-          <Link to="/signup">
-            <span>Criar conta</span>
-          </Link>
-
-          <InputSubmit type="submit">Log In</InputSubmit>
+          <Box
+            alignContent="center"
+            flexDirection="column"
+            justifyContent="center"
+            mx="auto"
+            width="100%"
+          >
+            <Box my={1} width={1}>
+              <InputSubmit type="submit">Sign Up</InputSubmit>
+            </Box>
+            <Box my={1} width={1}>
+              <Link to="/login" style={{ marginRight: "1%", width: "100%" }}>
+                <ButtonSecondary buttonText={"Voltar"} buttonType="button" />
+              </Link>
+            </Box>
+          </Box>
         </Form>
       </Box>
     </Flex>
   );
 }
 
-export default Login;
+export default SignUp;

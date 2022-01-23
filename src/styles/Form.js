@@ -10,6 +10,10 @@ export const Form = styled.form`
   margin: 2% auto;
   text-align: center;
   width: 100%;
+
+  span {
+    color: ${Variables.colorPrimary};
+  }
 `;
 
 export const InputText = styled.input`
@@ -44,6 +48,7 @@ export const InputSubmit = styled.button`
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  height: 100%;
   padding: 2%;
   margin: 2% 1%;
   transition: 0.3s;

@@ -10,8 +10,8 @@ Utilizar o comando `npm start`, o aplicativo iniciará em [http://localhost:3000
 
 Tecnologias utilizadas: React, React Router, React Hook Form, Styled Components e Styled System
 
-### Login de teste para acessar o app
+### Acessar o app
 
-E-mail - teste@teste.com
+Para acessar o app você deve criar uma conta com email e senha em [http://localhost:3000/signup](http://localhost:3000/signup)
 
-Senha - 123456
+Após isso fazer o login com a conta criada em [http://localhost:3000/login](http://localhost:3000/login)
