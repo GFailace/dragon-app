@@ -97,11 +97,6 @@ function Details({ match }) {
           mx="auto"
           width={[1, 1 / 3]}
         >
-          <Box width="50%">
-            <NavLink to="/" style={{ marginRight: "1%", width: "100%" }}>
-              <ButtonSecondary buttonText={"Voltar"} buttonType="button" />
-            </NavLink>
-          </Box>
           {!errorReq ? (
             <Box width="50%" onClick={toggleEdit}>
               <Button buttonText={"Editar"} />
@@ -109,6 +104,12 @@ function Details({ match }) {
           ) : (
             ""
           )}
+
+          <Box width="50%">
+            <NavLink to="/" style={{ marginRight: "1%", width: "100%" }}>
+              <ButtonSecondary buttonText={"Voltar"} buttonType="button" />
+            </NavLink>
+          </Box>
         </Box>
       </Box>
     </Flex>

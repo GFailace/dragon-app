@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { ErrorMessage } from "@hookform/error-message";
 
 import api from "../../services/api";
@@ -8,6 +8,7 @@ import api from "../../services/api";
 import { Form, InputSubmit, InputText } from "../../styles/Form";
 import { ErrorSpan } from "../../styles/ErrorMessage";
 import { Box } from "../../styles/Flex";
+import ButtonSecondary from "../ButtonSecondary";
 
 function CreateForm({ match }) {
   const [error, setError] = useState();
@@ -38,15 +39,6 @@ function CreateForm({ match }) {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <Box
-        onClick={() => {
-          history.push("/");
-        }}
-        width="10%"
-      >
-        <span>Voltar</span>
-      </Box>
-
       <h1>Criar Dragão</h1>
       <InputText
         type="text"
@@ -68,8 +60,15 @@ function CreateForm({ match }) {
         <ErrorMessage errors={errors} name="tipo" />
       </ErrorSpan>
 
-      <Box>
-        <InputSubmit type="submit">Salvar</InputSubmit>
+      <Box alignContent="center" justifyContent="center" mx="auto" width="100%">
+        <Box width={1 / 2}>
+          <InputSubmit type="submit">Salvar</InputSubmit>
+        </Box>
+        <Box width={1 / 2}>
+          <Link to="/" style={{ marginRight: "1%", width: "100%" }}>
+            <ButtonSecondary buttonText={"Voltar"} buttonType="button" />
+          </Link>
+        </Box>
       </Box>
 
       {error ? (
