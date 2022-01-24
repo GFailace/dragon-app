@@ -11,8 +11,9 @@ export const Form = styled.form`
   text-align: center;
   width: 100%;
 
-  span {
+  a {
     color: ${Variables.colorPrimary};
+    margin: 10px auto;
   }
 `;
 

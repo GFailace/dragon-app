@@ -15,3 +15,8 @@ Tecnologias utilizadas: React, React Router, React Hook Form, Styled Components 
 Para acessar o app você deve criar uma conta com email e senha em [http://localhost:3000/signup](http://localhost:3000/signup)
 
 Após isso fazer o login com a conta criada em [http://localhost:3000/login](http://localhost:3000/login)
+
+Ou você pode utilizar a conta:
+
+E-mail - teste@teste.com
+Senha - 123456
